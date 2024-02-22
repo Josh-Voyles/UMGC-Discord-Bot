@@ -25,7 +25,9 @@ async def on_member_join(member):
                       ('Please look at #welcome-and-rules but refrain from '
                        'posting there.') + \
                       ('\nPlease let Josh Voyles know if you have sever '
-                       'feedback or problems.')
+                       'feedback or problems.\n') + \
+                      ('Contribute to this channels bot here: '
+                       'https://github.com/Josh-Voyles/UMGC-Discord-Bot')
     await channel.send(welcome_message)
 
 
