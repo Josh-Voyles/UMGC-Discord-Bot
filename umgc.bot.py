@@ -15,9 +15,8 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_member_join(member):
-    guild = member.guild
-    channel = bot.get_channel(cred.MEMBER_LANDING)
-    welcome_message = f'Welcome {member.mention} to the {guild.name}!\n\n' + \
+    channel = member.guild.system_channel
+    welcome_message = f'Welcome {member.mention} to the {member.guild.name}!\n\n' + \
                       ('Please look at #welcome-and-rules but refrain from '
                        'posting there.') + \
                       ('\nPlease let Josh Voyles know if you have sever '
