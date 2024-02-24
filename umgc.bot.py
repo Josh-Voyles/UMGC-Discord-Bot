@@ -33,7 +33,8 @@ async def say_hello(ctx):
 
 @bot.command(name='github', help='Responds with its Github address.')
 async def show_github(ctx):
-    await ctx.send(cred.GITHUB)
+    instructios = "\nIf you'd like to join the project, DM Josh Voyles your email indicating you'd like to join."
+    await ctx.send(cred.GITHUB + instructios)
 
 
 @bot.event
