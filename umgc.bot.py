@@ -27,7 +27,7 @@ async def on_member_join(member):
 @bot.command(name='hello', help='Responds with Hello!')
 async def say_hello(ctx):
     m_name = ctx.author.display_name
-    await ctx.send(f'Hello!, {m_name}')
+    await ctx.send(f'Hello, {m_name}!')
 
 
 @bot.command(name='github', help='Responds with its Github address.')
