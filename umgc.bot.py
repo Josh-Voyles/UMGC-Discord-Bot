@@ -1,6 +1,7 @@
 import discord
 import cred
 from discord.ext import commands
+import textwrap
 
 # hidden Discord token
 TOKEN = cred.TOKEN
@@ -16,19 +17,16 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_member_join(member):
     channel = member.guild.system_channel
-    welcome_message = f'Welcome {member.mention} to the {member.guild.name}!\n\n' + \
-                      ('Please look at #welcome-and-rules but refrain from '
-                       'posting there.') + \
-                      ('\nPlease let Josh Voyles know if you have sever '
-                       'feedback or problems.\n') + \
-                      ('Contribute to this channels bot here: '
-                       'https://github.com/Josh-Voyles/UMGC-Discord-Bot')
+    welcome_message = textwrap.dedent(f"""Welcome {member.mention} to the {member.guild.name}!
+                      Please look at # welcome-and-rules and introduce yourself!.
+                      Please let Josh Voyles know if you have sever feedback or problems.
+                      ('Contribute to this channels bot here: {cred.GITHUB}""")
     await channel.send(welcome_message)
 
 
 @bot.command(name='hello', help='Responds with Hello!')
-async def say_hello(ctx):
-    await ctx.send('Hello!')
+async def say_hello(ctx, member):
+    await ctx.send(f'Hello!, {member.mention}')
 
 
 @bot.command(name='github', help='Responds with its Github address.')
