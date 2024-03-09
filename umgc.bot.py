@@ -25,7 +25,7 @@ async def on_member_join(member):
 
 
 @bot.command(name='hello', help='Responds with Hello!')
-async def say_hello(ctx, member):
+async def say_hello(ctx, member: discord.Member):
     await ctx.send(f'Hello!, {member.mention}')
 
 
