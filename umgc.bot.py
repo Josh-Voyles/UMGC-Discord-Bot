@@ -17,10 +17,12 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_member_join(member):
     channel = member.guild.system_channel
-    welcome_message = textwrap.dedent(f"""Welcome {member.mention} to the {member.guild.name}!
-                      Please look at # welcome-and-rules and introduce yourself!.
-                      Please let Josh Voyles know if you have sever feedback or problems.
-                      ('Contribute to this channels bot here: {cred.GITHUB}""")
+    welcome_message = textwrap.dedent(f"""
+                      Welcome {member.mention} to the {member.guild.name}!
+
+                      Please look at #welcome-and-rules and introduce yourself!.
+                      Please let Josh Voyles know if you have server feedback!.
+                      Contribute to this channels bot here: {cred.GITHUB}""")
     await channel.send(welcome_message)
 
 
